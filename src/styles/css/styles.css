@@ -1,0 +1,226 @@
+nav {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0 0 0 60px;
+  display: flex;
+  justify-content: space-between;
+  height: 60px; }
+  nav img {
+    height: 65%;
+    width: auto;
+    align-self: center; }
+  nav ul {
+    list-style: none; }
+    nav ul li {
+      display: inline-block;
+      padding: 0.125rem 2rem;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: 'GothamLight';
+      letter-spacing: 1px;
+      font-weight: bold; }
+      nav ul li img {
+        vertical-align: bottom; }
+
+article {
+  margin-left: 10rem;
+  padding: 1rem 0 1rem 2rem; }
+  article h3 {
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: #95c11e; }
+  article div {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    line-height: 1.4rem;
+    font-weight: bold; }
+
+button {
+  background-color: #95c11e;
+  color: #111619;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  border: none;
+  outline: none; }
+
+footer {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 80px;
+  padding-top: 10px; }
+  footer ul {
+    max-width: 80%;
+    list-style: none;
+    align-self: flex-start; }
+    footer ul img {
+      height: 65%;
+      width: auto;
+      align-self: center; }
+    footer ul li {
+      display: inline-block;
+      padding: 0rem 2rem 0 0;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-family: 'GothamLight';
+      letter-spacing: 1px;
+      font-weight: bold;
+      vertical-align: top; }
+      footer ul li img {
+        vertical-align: bottom; }
+      footer ul li p {
+        vertical-align: top;
+        font-size: 12px;
+        padding: 0;
+        margin: 0; }
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url("../../fonts/GothamBook.ttf"); }
+@font-face {
+  font-family: 'GothamLight';
+  src: url("../../fonts/GothamLight.ttf"); }
+@font-face {
+  font-family: 'GothamMedium';
+  src: url("../../fonts/GothamMedium.ttf"); }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; }
+
+body {
+  background-color: #111619;
+  color: #ffffff;
+  font-family: "GothamLight", sans-serif !important;
+  position: relative;
+  min-height: 100%;
+  height: 100%; }
+
+main {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 60px;
+  z-index: 10;
+  width: 95%;
+  height: 100%;
+  min-height: 100%;
+  padding: 2rem;
+  margin-bottom: 80px; }
+  main .article-container {
+    width: 60%;
+    display: inline-block; }
+  main aside {
+    max-width: 20%;
+    margin-top: 60px;
+    margin-left: 200px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px; }
+    main aside ul {
+      margin: 0;
+      padding: 1rem; }
+      main aside ul li {
+        margin: 0px;
+        padding: 0.35rem;
+        color: #111619;
+        font-family: "GothamMedium", sans-serif !important;
+        list-style-type: none; }
+        main aside ul li:nth-child(3), main aside ul li:nth-child(9) {
+          padding-bottom: 2rem; }
+        main aside ul li:nth-child(2):before {
+          content: '\2022 ';
+          /* Bullet color */
+          color: #95c11e;
+          padding-right: 0.5em; }
+
+.background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../img/background.png");
+  width: 100%;
+  height: 600px;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px); }
+
+.blur-background-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../img/background.png");
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  opacity: 0.7;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px); }
+
+.text-green {
+  color: #95c11e; }
+
+.bg-green {
+  background-color: #95c11e; }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+.text-underline {
+  text-decoration: underline;
+  text-decoration-color: #95c11e; }
+
+.padding-bottom {
+  padding-bottom: 6rem; }
+
+.text-center {
+  text-align: center; }
+
+.m-auto {
+  margin: 0 auto; }
+
+.calculator {
+  display: block;
+  background-color: #ffffff;
+  color: #111619;
+  max-width: 100%;
+  padding-bottom: 3rem;
+  padding-top: 3rem; }
+  .calculator .third {
+    display: inline-block;
+    max-width: 30%;
+    vertical-align: top;
+    padding: 2rem 4rem; }
+    .calculator .third label {
+      display: block; }
+    .calculator .third input {
+      height: 20px; }
+
+.text-right {
+  text-align: right; }
+
+/*# sourceMappingURL=styles.css.map */

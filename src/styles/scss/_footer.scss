@@ -1,0 +1,39 @@
+footer {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 80px;
+    padding-top: 10px;
+    ul {
+        max-width: 80%;
+        img {
+            height: 65%;
+            width: auto;
+            align-self: center;
+        }
+        list-style: none;
+        align-self:flex-start;
+        li {
+            display: inline-block;
+            padding: 0rem 2rem 0 0;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-family: 'GothamLight';
+            letter-spacing: 1px;
+            font-weight: bold;
+            vertical-align: top;
+            img {
+                vertical-align: bottom;
+            }
+            p {
+                vertical-align: top;
+                font-size: 12px;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}
