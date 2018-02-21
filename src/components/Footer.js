@@ -12,8 +12,8 @@ const Footer = () => {
           <p><small>info@agrotax.hu</small></p>
           <p><small>+36 30 318 0095í</small></p>
         </li>
-        <li className="text-uppercase">adatkezelés és tárolás</li>
-        <li className="text-uppercase">felhasználási feltételek</li>
+        <li className="text-uppercase"><small>adatkezelés és tárolás</small></li>
+        <li className="text-uppercase"><small>felhasználási feltételek</small></li>
         <li><img src={facebook} alt="Facebook logo" /></li>
       </ul>
     </footer>

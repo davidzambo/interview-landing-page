@@ -4,7 +4,7 @@ const Article = (props) => {
   return (
     <article>
       <h3>{props.title}</h3>
-      <p>{props.content} <span className="text-green"><em>Tovább</em></span></p>
+      <div>{props.content} <span className="text-green"><em>Tovább</em></span></div>
       <hr />
     </article>
   );

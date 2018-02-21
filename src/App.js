@@ -66,9 +66,8 @@ class App extends Component {
             <h5 className="text-underline text-uppercase">Ismerje meg szolgáltatásunk</h5>
           </div>
 
-          <div>
           <Calculator />
-          </div>
+          
         </main>
         <Footer/>
       </div>

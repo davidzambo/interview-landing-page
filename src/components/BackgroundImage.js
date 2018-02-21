@@ -4,7 +4,6 @@ const BackgroundImage = () => {
   return (
     <header>
       <div className="background-image"/>
-      <div className="blur-background-image" />
     </header>
   );
 }

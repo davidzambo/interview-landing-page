@@ -4,13 +4,8 @@ export default class Calculator extends Component {
   constructor(props){
     super(props);
     this.state = {
-      area: '',
-      boxes: {
-        land: false,
-        fee: false,
-        complex: false
-      },
-      checked : 0,
+      area: 0,
+      checkedOptions: [],
       price: 0
     };
     this.handleCheck = this.handleCheck.bind(this);
@@ -26,20 +21,23 @@ export default class Calculator extends Component {
   }
 
   handleCheck(e){
-    let boxes = Object.assign({}, this.state.boxes);
-    let checked = 0;
-    boxes[e.target.value] = !this.state.boxes[e.target.value];
-    if (this.state.boxes.land) checked++;
-    if (this.state.boxes.fee) checked++;
-    if (this.state.boxes.complex) checked++; 
-    this.setState({
-      boxes: boxes,
-      checked: checked
-    });
+    let checkedOptions = [...this.state.checkedOptions];
+    if (e.target.checked){
+      checkedOptions.push(e.target.name);
+      this.setState({
+        checkedOptions: checkedOptions
+      });
+    } else {
+      let removedCheckedOption = checkedOptions.filter((el) => el !== e.target.name);
+      this.setState({
+        checkedOptions: removedCheckedOption
+      });
+
+    }
   }
 
   handleCalculate(){
-    let price = this.state.area * (10000 + (this.state.checked * 1000));
+    let price = this.state.area * (10000 + (this.state.checkedOptions.length * 1000));
     this.setState({
       price: price
     })
@@ -49,31 +47,32 @@ export default class Calculator extends Component {
     return (
       <section className="calculator">
         <h3 className="text-uppercase text-center text-underline">Szolgáltatási díj Kalkulátor</h3>
-        <div className="third">
-          <p>A terület mérete:</p>
-          <input type="number"min="0" value={this.state.area} onChange={this.handleChange}/> Ha
-        </div>
-        <div className="third">
-          <p className="text-center">Válasszon szolgáltatást</p>
-          <label>
-            <input type="checkbox" value="land" checked={this.state.boxes.land} onChange={this.handleCheck}/>
-            Termőföld érték meghatározás
+        <div className="calculator-fields">
+          <div className="third">
+            <p>A terület mérete:</p>
+            <input type="number"min="0" value={this.state.area} onChange={this.handleChange}/> Ha
+          </div>
+          <div className="third">
+            <p className="text-center">Válasszon szolgáltatást</p>
+            <label>
+              <input type="checkbox" name="land" onChange={this.handleCheck}/>
+              Termőföld érték meghatározás
+              </label>
+            <label>
+              <input type="checkbox" name="fee" onChange={this.handleCheck} />
+              Haszonbérleti díj meghatározás
             </label>
-          <label>
-            <input type="checkbox" value="fee" checked={this.state.boxes.fee} onChange={this.handleCheck} />
-            Haszonbérleti díj meghatározás
-          </label>
-          <label>
-            <input type="checkbox" value="complex" checked={this.state.boxes.complex} onChange={this.handleCheck} />
-            Komplex elemzést kérek
-          </label>
-        </div>
-        <div className="third text-right">
-          <p>Szolgáltatás díja:</p>
-          <p>Alapdíj</p>
-          <p>Értékbecslési díj</p>
-          <p>Áfa</p>
-          <p><strong>{this.state.price}</strong></p>
+            <label>
+              <input type="checkbox" name="complex" onChange={this.handleCheck} />
+              Komplex elemzést kérek
+            </label>
+          </div>
+          <div className="third text-right">
+            <p>Szolgáltatás díja:</p>
+            <p><strong>{this.state.price}</strong>ft Alapdíj</p>
+            <p>Értékbecslési díj</p>
+            <p>Áfa</p>
+          </div>
         </div>
         <div className="text-center">
           <button className="text-uppercase" onClick={this.handleCalculate}>Érékbecslés indítása</button>

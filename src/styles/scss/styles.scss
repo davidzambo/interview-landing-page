@@ -1,12 +1,9 @@
-@import 'app';
-@import 'body';
 @import 'variables';
 @import 'navbar';
 @import 'article';
 @import 'mixins';
 @import 'button';
 @import 'footer';
-
 @font-face {
     font-family: 'GothamBook';
     src: url('../../fonts/GothamBook.ttf');
@@ -94,25 +91,11 @@ main {
     right: 0;
     z-index: 1;
     display: block;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../img/background.png');
+    background: linear-gradient( 90deg, rgba(17, 22, 25, 1), rgba(17, 22, 25, 0.1) 40%, rgba(17, 22, 25, 0.1) 60% , rgba(17, 22, 25, 1) 100%),
+    linear-gradient( 180deg, rgba(17, 22, 25, 1), rgba(17, 22, 25, 0.1) 40%, rgba(17, 22, 25, 0.1) 50% , rgba(17, 22, 25, 1) 100%), url('../../img/background.png');
     width: 100%;
     height: 600px;
     @include blur(1px);
-}
-
-.blur-background-image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    display: block;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../img/background.png');
-    background-size: cover;
-    width: 100%;
-    height: 600px;
-    opacity: 0.7;
-    @include blur(4px);
 }
 
 .text-green {
@@ -144,29 +127,32 @@ main {
     margin: 0 auto;
 }
 
-.calculator{
-  display: block;
-  background-color:$white;
-  color: $dark;
-  max-width: 100%;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-  .third{
-    display: inline-block;
-    max-width: 30%;
-    
-    vertical-align: top;
-    padding: 2rem 4rem;
-    label{
-      display: block;
+.calculator {
+    display: block;
+    background-color: $white;
+    color: $dark;
+    max-width: 100%;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    // *{border: 1px solid black;}
+    .calculator-fields{
+      display: flex;
+      justify-content: space-around;
+      .third {
+          vertical-align: top;
+          padding: 2rem 4rem;
+          label {
+              display: block;
+          }
+          input {
+              height: 20px;
+          }
+      }
     }
-    input{
-      height: 20px;
-    }
-  }
 }
 
-.text-right{
-  text-align: right;
+.text-right {
+    text-align: right;
 }
+
 // *{border: 1px solid black;}
