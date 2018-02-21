@@ -4,21 +4,7 @@
 @import 'mixins';
 @import 'button';
 @import 'footer';
-@font-face {
-    font-family: 'GothamBook';
-    src: url('../../fonts/GothamBook.ttf');
-}
-
-@font-face {
-    font-family: 'GothamLight';
-    src: url('../../fonts/GothamLight.ttf');
-}
-
-@font-face {
-    font-family: 'GothamMedium';
-    src: url('../../fonts/GothamMedium.ttf');
-}
-
+@import 'typography';
 html,
 body {
     margin: 0;
@@ -32,9 +18,9 @@ body {
     background-color: $dark;
     color: $white;
     font-family: 'GothamLight', sans-serif!important;
-    position: relative;
-    min-height: 100%;
-    height: 100%;
+}
+.App{
+  position: relative;
 }
 
 main {
@@ -48,39 +34,43 @@ main {
     min-height: 100%;
     padding: 2rem;
     margin-bottom: 80px;
-    .article-container {
-        width: 60%;
-        display: inline-block;
-    }
-    aside {
-        max-width: 20%;
-        margin-top: 60px;
-        margin-left: 200px;
-        display: inline-block;
-        vertical-align: top;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 10px;
-        ul {
-            margin: 0;
-            padding: 1rem;
-            li {
-                margin: 0px;
-                padding: 0.35rem;
-                color: $dark;
-                font-family: 'GothamMedium', sans-serif!important;
-                list-style-type: none;
-                &:nth-child(3),
-                &:nth-child(9) {
-                    padding-bottom: 2rem;
-                }
-                &:nth-child(2):before {
-                    content: '\2022 ';
-                    /* Bullet color */
-                    color: $green;
-                    padding-right: 0.5em;
-                }
-            }
-        }
+    .content{
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      .article-container {
+          width: 800px;
+          display: inline-block;
+      }
+      aside {
+          width: 220px;
+          margin-top: 60px;
+          display: inline-block;
+          vertical-align: top;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 10px;
+          ul {
+              margin: 0;
+              padding: 1rem;
+              li {
+                  margin: 0px;
+                  padding: 0.35rem;
+                  color: $dark;
+                  font-family: 'GothamMedium', sans-serif!important;
+                  list-style-type: none;
+                  &:nth-child(3),
+                  &:nth-child(9) {
+                      padding-bottom: 2rem;
+                  }
+                  &:nth-child(2):before {
+                      content: '\2022 ';
+                      /* Bullet color */
+                      color: $green;
+                      padding-right: 0.5em;
+                  }
+              }
+          }
+      }
     }
 }
 
@@ -91,8 +81,7 @@ main {
     right: 0;
     z-index: 1;
     display: block;
-    background: linear-gradient( 90deg, rgba(17, 22, 25, 1), rgba(17, 22, 25, 0.1) 40%, rgba(17, 22, 25, 0.1) 60% , rgba(17, 22, 25, 1) 100%),
-    linear-gradient( 180deg, rgba(17, 22, 25, 1), rgba(17, 22, 25, 0.1) 40%, rgba(17, 22, 25, 0.1) 50% , rgba(17, 22, 25, 1) 100%), url('../../img/background.png');
+    background: linear-gradient( 90deg, rgba(17, 22, 25, 1), rgba(17, 22, 25, 0.1) 40%, rgba(17, 22, 25, 0.1) 60%, rgba(17, 22, 25, 1) 100%), linear-gradient( 180deg, rgba(17, 22, 25, 1), rgba(17, 22, 25, 0.1) 40%, rgba(17, 22, 25, 0.1) 50%, rgba(17, 22, 25, 1) 100%), url('../../img/background.png');
     width: 100%;
     height: 600px;
     @include blur(1px);
@@ -127,6 +116,10 @@ main {
     margin: 0 auto;
 }
 
+.text-right {
+    text-align: right;
+}
+
 .calculator {
     display: block;
     background-color: $white;
@@ -134,25 +127,18 @@ main {
     max-width: 100%;
     padding-bottom: 3rem;
     padding-top: 3rem;
-    // *{border: 1px solid black;}
-    .calculator-fields{
-      display: flex;
-      justify-content: space-around;
-      .third {
-          vertical-align: top;
-          padding: 2rem 4rem;
-          label {
-              display: block;
-          }
-          input {
-              height: 20px;
-          }
-      }
+    .calculator-fields {
+        display: flex;
+        justify-content: space-around;
+        .third {
+            vertical-align: top;
+            padding: 2rem 4rem;
+            label {
+                display: block;
+            }
+            input {
+                height: 20px;
+            }
+        }
     }
 }
-
-.text-right {
-    text-align: right;
-}
-
-// *{border: 1px solid black;}

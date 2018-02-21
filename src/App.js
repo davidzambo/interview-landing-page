@@ -49,17 +49,17 @@ class App extends Component {
         <Navbar />
         <BackgroundImage />
         <main>
-
-          <div className="article-container">
-            <article className="padding-bottom">
-              <h3>{headerArticle.title}</h3>
-              <div>{headerArticle.content}</div>
-              <button className="text-uppercase">Ismerje meg szolgáltatásunkat</button>
-            </article>
-            { articlesList }
-          </div>
-
+          <div class="content">
+            <div className="article-container">
+              <article className="padding-bottom">
+                <h3>{headerArticle.title}</h3>
+                <div>{headerArticle.content}</div>
+                <button className="text-uppercase">Ismerje meg szolgáltatásunkat</button>
+              </article>
+              { articlesList }
+            </div>
           <Sidebar />
+          </div>
 
           <div className="text-center">
             <button className="text-uppercase text-center m-auto">Módszertani leírások letöltése</button>

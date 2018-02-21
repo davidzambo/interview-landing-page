@@ -27,7 +27,6 @@ nav {
         vertical-align: bottom; }
 
 article {
-  margin-left: 10rem;
   padding: 1rem 0 1rem 2rem; }
   article h3 {
     padding: 0;
@@ -49,39 +48,53 @@ button {
   border: none;
   outline: none; }
 
-footer {
-  position: relative;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
+footer ul {
+  padding: 0.5rem 3rem;
   background-color: rgba(255, 255, 255, 0.2);
-  height: 80px;
-  padding-top: 10px; }
-  footer ul {
-    max-width: 80%;
-    list-style: none;
-    align-self: flex-start; }
-    footer ul img {
-      height: 65%;
-      width: auto;
-      align-self: center; }
-    footer ul li {
-      display: inline-block;
-      padding: 0rem 2rem 0 0;
-      text-transform: uppercase;
-      font-size: 14px;
-      font-family: 'GothamLight';
-      letter-spacing: 1px;
-      font-weight: bold;
-      vertical-align: top; }
-      footer ul li img {
-        vertical-align: bottom; }
-      footer ul li p {
-        vertical-align: top;
-        font-size: 12px;
-        padding: 0;
-        margin: 0; }
+  max-width: 100%;
+  display: flex;
+  height: 50px;
+  margin: 0;
+  justify-content: space-between;
+  list-style: none;
+  align-self: flex-start; }
+  footer ul img {
+    height: 75%;
+    width: auto;
+    align-self: center; }
+  footer ul li {
+    display: inline-block;
+    padding: 0rem 1rem 0 0;
+    font-size: 14px;
+    font-family: 'GothamLight';
+    letter-spacing: 1px;
+    font-weight: bold;
+    vertical-align: top; }
+    footer ul li img {
+      vertical-align: bottom; }
+    footer ul li p {
+      vertical-align: top;
+      font-size: 12px;
+      padding: 0;
+      margin: 0; }
+    footer ul li:nth-child(5) {
+      letter-spacing: 0px;
+      font-size: 11px;
+      display: flex;
+      align-content: flex-start; }
+      footer ul li:nth-child(5) img {
+        height: 90%;
+        width: auto;
+        padding: 0 0.5rem;
+        align-self: flex-start; }
+      footer ul li:nth-child(5) span {
+        align-self: center; }
+    footer ul li:last-child {
+      display: flex; }
+      footer ul li:last-child img {
+        height: 1rem;
+        width: auto;
+        align-self: center; }
 
 @font-face {
   font-family: 'GothamBook';
@@ -103,10 +116,10 @@ body {
 body {
   background-color: #111619;
   color: #ffffff;
-  font-family: "GothamLight", sans-serif !important;
-  position: relative;
-  min-height: 100%;
-  height: 100%; }
+  font-family: "GothamLight", sans-serif !important; }
+
+.App {
+  position: relative; }
 
 main {
   position: relative;
@@ -119,33 +132,36 @@ main {
   min-height: 100%;
   padding: 2rem;
   margin-bottom: 80px; }
-  main .article-container {
-    width: 60%;
-    display: inline-block; }
-  main aside {
-    max-width: 20%;
-    margin-top: 60px;
-    margin-left: 200px;
-    display: inline-block;
-    vertical-align: top;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 10px; }
-    main aside ul {
-      margin: 0;
-      padding: 1rem; }
-      main aside ul li {
-        margin: 0px;
-        padding: 0.35rem;
-        color: #111619;
-        font-family: "GothamMedium", sans-serif !important;
-        list-style-type: none; }
-        main aside ul li:nth-child(3), main aside ul li:nth-child(9) {
-          padding-bottom: 2rem; }
-        main aside ul li:nth-child(2):before {
-          content: '\2022 ';
-          /* Bullet color */
-          color: #95c11e;
-          padding-right: 0.5em; }
+  main .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; }
+    main .content .article-container {
+      width: 800px;
+      display: inline-block; }
+    main .content aside {
+      width: 220px;
+      margin-top: 60px;
+      display: inline-block;
+      vertical-align: top;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px; }
+      main .content aside ul {
+        margin: 0;
+        padding: 1rem; }
+        main .content aside ul li {
+          margin: 0px;
+          padding: 0.35rem;
+          color: #111619;
+          font-family: "GothamMedium", sans-serif !important;
+          list-style-type: none; }
+          main .content aside ul li:nth-child(3), main .content aside ul li:nth-child(9) {
+            padding-bottom: 2rem; }
+          main .content aside ul li:nth-child(2):before {
+            content: '\2022 ';
+            /* Bullet color */
+            color: #95c11e;
+            padding-right: 0.5em; }
 
 .background-image {
   position: absolute;
@@ -185,6 +201,9 @@ main {
 .m-auto {
   margin: 0 auto; }
 
+.text-right {
+  text-align: right; }
+
 .calculator {
   display: block;
   background-color: #ffffff;
@@ -202,8 +221,5 @@ main {
         display: block; }
       .calculator .calculator-fields .third input {
         height: 20px; }
-
-.text-right {
-  text-align: right; }
 
 /*# sourceMappingURL=styles.css.map */
